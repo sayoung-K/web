@@ -1,0 +1,67 @@
+body{
+  margin:0;
+  }
+
+a {
+  color:green;
+  text-decoration:none;
+   }
+
+
+
+h1{
+  font-size:45px;
+  text-align: center;
+  margin:0;
+  border-bottom: 1px solid gray;
+  padding:20px
+  }
+
+#grid ol{
+  border-right:1px solid gray;
+  width:200px;
+  margin:0;
+  padding:20px;
+  }
+#grid{
+  display: grid;
+  grid-template-columns:250px 1fr;
+  }
+
+#grid #article{
+  padding-left:25px;
+  }
+
+@media(max-width:620px){
+    #grid{
+      display: block;
+    }
+    #grid ol{
+      border-right:none;
+    }
+    h1{
+      border-bottom:none;
+    }
+  }
+
+ /*테이블 속성*/
+table, th, td{
+  border-collapse:collapse;
+  border: 1px solid black;
+  }
+
+table{
+  margin-top:20px;
+  width:100%;
+  text-align:center;
+  }
+
+td{
+  /*  height: 30px; */
+  padding:5px;
+  }
+  /*테이블속성 끝*/
+
+li{
+  padding:3px;
+  }

@@ -1,49 +1,1008 @@
 <!doctype html>
 <html>
+  <head>
+    <title> Developer Plan </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
 
-<head>
-<title> Developer Plan </title>
-<meta charset="utf-8">
-</head>
+    <p> <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVK7LCDXP7"></script>
+   <script>
+   window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-<body>
-<h1><a href="index.html">개발자 준비. 나도 개발자</a></h1>
+    gtag('config', 'G-VVK7LCDXP7');
+    </script>
+    </p>
+  </head>
 
-개발자 준비 시작 <strong><u>2021년 9월 12일</u> 오후 7:30</strong><br>
+  <body>
+    <h1><a href="index.html">개발자 준비.</a></h1>
+
+    <div id="grid">
+     <ol> <!--목차-->
+        <li><a href="1.html">HTML</a></li>
+        <li><a href="2.html">CSS</a></li>
+        <li><a href="3.html">JavaSctipt</a></li>
+     </ol>
+
+     <div id="article">
+       개발자 준비 시작 <strong><u>2021년 9월 12일</u> 오후 7:30</strong><br>
+
+       <h2 id="기초학습내용">기초 합습내용.</h2>
+       <ul>
+         <li><a href="https://www.youtube.com/channel/UCFfALXX0DOx7zv6VeR5U_Bg" target="blank">이수안컴퓨터연구소</a>, <a href="https://www.youtube.com/user/egoing2" target="blank">생활코딩 참고.</a></li>
+       </ul>
+
+        html 150개 이상 태그가 존재하고, www.advancedwebranking.com 에서
+        가장 많이 사용되는 태그 확인가능하다.
+        <br>보통의 웹페이지는 32개의 태그를 주소 사용.
+        1위 html부터 32번째 i까지(h가 1~6까지 6개라서).
+
+        <!-- html 기본구조 -->
+        <h3>HTML의 기본구조</h3>  
+         <!--xmp 는 코딩 그대로 보여줌-->
+         <xmp>  
+         <!doctype html>
+          <html>
+            <head>
+              <title> 문서 제목 </title>
+            </head>
+            <body>
+              <h1> 제목 </h1>
+              <p> 내용 </p>
+            </body>
+          </html>
+         </xmp>
+          <!--html 기본구조 설명-->
+            <ul>
+              <li>
+              &lt;!DOCTYPE&gt; : 현재 문서의 HTML 타입을 정의하며, HTML5 의 경우 &lt;!DOCTYPE html&gt; 로 명시한다.
+              </li>
+              <li>
+              &lt;html&gt; : HTML 문서의 시작과 끝을 표시한다.
+              </li>
+              <LI>
+              &lt;head&gt; : 웹페이지 문서에 대한 정보로 메타데이터(metadata)를 정의한다.
+             </LI>
+                <ul>
+                  <li>
+                    style, meta, link, script, base 태그 등으로 정의된다.
+                  </li>
+                  <li>
+                    &lt;title&gt; : HTML 문서의 제목을 정의한다.
+                  </li>
+                </ul>
+             <LI>
+              &lt;body&gt; : 내부에 웹 페이지의 내용을 작성한다.
+              </LI>
+                <ul>
+                  <li>
+                    &lt;h1&gt; ~ &lt;h6&gt; : 본문 내용의 제목을 크기별로 나타낸다.
+                  </li>
+                  <li>
+                    &lt;p&gt; : 본문의 각 단락을 구분한다.
+                  </li>
+                </ul>
+            </ul>
+         
+        <!--텍스트 서식 태그-->
+        <h3>텍스트 서식 태그</h3>
+          <table>
+            <tr id="tr1">  
+              <th>태그</th>
+              <th>설명</th>
+            </tr>
+            <tr> 
+              <td> &lt;b&gt; ~ &lt;/b&gt; </td>
+              <td> <b>굵게</b> </td>
+            </tr>
+            <tr>
+              <td> &lt;i&gt; ~ &lt;/i&gt; </td>
+              <td> <i>이탤릭체</i></td>
+            </tr>
+            <tr>
+              <td> &lt;small&gt; ~ &lt;/small&gt; </td>
+              <td> <small>작게</small></td>
+            </tr>
+            <tr>
+              <td> &lt;ins&gt; ~ &lt;/ins&gt;</td>
+              <td> <ins>밑줄(insert)</ins></td>
+            </tr>
+            <tr>
+              <td> &lt;del&gt; ~ &lt;/del&gt;</td>
+              <td> <del>글자 가운데선</del></td>
+            </tr>
+            <tr>
+              <td> &lt;mark&gt; ~ &lt;/makr&gt; </td>
+              <td> <mark>하이라이트(형광펜)</mark></td>
+            </tr>
+            <tr>
+              <td> &lt;strong&gt; ~ &lt;/strong&gt;</td>
+              <td> <strong>중요</strong></td>
+            </tr>
+            <tr>
+              <td> &lt;code&gt; ~ &lt;/code&gt;</td>
+              <td> <code>코드</code></td>
+            </tr>
+            <tr>
+              <td> &lt;em&gt; ~ &lt;/em&gt;</td>
+              <td> <em>강조(emphasized text)</em></td>
+            </tr>
+            <tr>
+              <td> &lt;sup&gt; ~ &lt;/sup&gt;</td>
+              <td> 1<sup>위첨자, 제곱(superscript)</sup></td>
+            </tr>
+            <tr>
+              <td> &lt;sub&gt; ~ &lt;/sub&gt;</td>
+              <td> 1<sub>아래첨자, log(subscript)</sub></td>
+            </tr>
+          
+          </table>
+
+        <!--인용 태그-->
+        <h3>인용 태그</h3>
+          <ul>
+            <li>
+              &lt;q&gt; ~ &lt;/q&gt; : <q>짧은 인라인 인용구</q>
+            </li>
+            <li>
+              &lt;blockquote&gt; ~ &lt;/blockquote&gt; : 
+               <blockquote>다른 소스에서 인용되는 부분을 블록으로 정의, 길이가 긴 인용구 사용 시</blockquote>
+            </li>
+            <li>
+              &lt;cite&gt; ~ &lt;/cite&gt; : <cite>특허, 기사, 고유명사 등 인용</cite>
+            </li>
+            <li>
+              &lt;abbr title="내용"&gt; : <abbr title="칼퇴근">칼퇴</abbr> &lt;-아래점선, 마우스 가져다 대면 설명
+            </li>
+            <li>
+              &lt;address&gt; ~ &lt;/address&gt; : 주소 입력할 때, <address>서울시 영등포구 ~~동</address>
+            </li>
+          </ul>
+
+        <!--앵커 태그-->
+        <h3>앵커 태그</h3>
+          <ul>
+            <li>
+              &lt;a href="주소" target=_내용&gt; 표시할 검색어 &lt;a&gt; : 하이퍼링크를 달아서 다른 주소 연결할 때 사용.
+            </li>
+            <li>
+              &lt;a href="#주소 혹은 위치/id 등"&gt; 표시할 검색어 &lt;a&gt; : 하이퍼링크를 달아서 해당 위치로 연결할 때 사용.
+              -> <a href="#기초학습내용">기초학습내용으로</a>
+            </li>
+
+            <li>
+              target 이후 부여하는 속성에 따라 다르게 연결함.
+            </li>
+              <ul> <!--target 속성-->
+                <li>
+                  _blank : 새탭으로 띄움 -> <a href="https://www.naver.com" target=_blank>네이버</a>
+                </li>
+                <li>
+                  _self : 현재에 띄움 -> <a href="https://www.naver.com" target=_self>네이버</a>
+                </li>
+                <li>
+                  _parent : 웹 브라우저의 부모창 -> <a href="https://www.naver.com" target=_parent>네이버</a>
+                </li>
+                <li>
+                  _top : 웹 브라우저 전체 영역 -> <a href="https://www.naver.com" target=_top>네이버</a>
+                </li>
+                <li>
+                  브라우저의 영역이 top-parent-self 와 같이 구분되어 있지 않을 경우에, parent와 top은 self일 때 처럼 동작한다.
+                </li>
+              </ul>
+          </ul>
+
+        <!--리스트 태그-->
+        <h3>리스트 태그</h3>
+          <xmp>
+            <ul> or <ol> -> 순서유무로 선택
+              <li>
+                첫 번째 리스트 내용
+              </li>
+              <li>
+                두 번째 리스트 내용
+              </li>
+            </ul> or </ol>
+
+            <dl> -> 정의 및 설명 필요 시
+              <dt>
+                정의할 단어
+              </dt>
+              <dd>
+                설명할 내용
+              </dd>
+            </dl>
+
+          </xmp>
+          <ul>
+            <li>
+              &lt;ul&gt; : 순서가 없는 리스트 태그 
+            </li>
+            <li>
+              순서없는 태그 그림 변경 : style="list-style-type: 모양" 
+            </li>
+              <ul style="list-style-type:circle">
+                <li>
+                  &lt;-빈 원 : &lt;ul style="list-style-type:circle"&gt;
+                </li>
+              </ul>
+              <ul style="list-style-type:square">
+                <li>
+                  &lt;-네모 : &lt;ul style="list-style-type:square"&gt;
+                </li>
+              </ul>
+               <ol style="padding: 0; width:100%">
+                <li>&lt;ol&gt; : 순서가 있는 리스트 태그 </li>
+                <li>예시</li>
+                <li>예시2</li>
+               </ol>
+                 <ul>
+                 <ol style="padding: 0; width:100%" type="A">
+                   <li>순서가 있는 리스트 태그, &lt;ol type="A"&gt; &lt;/ol&gt;</li>
+                   <li>예시</li>
+                   <li>예시2</li>
+                 </ol>
+                 <ol style="padding: 0; width:100%" type="i">
+                   <li>순서가 있는 리스트 태그, &lt;ol type="i"&gt; &lt;/ol&gt;</li>
+                   <li>예시</li>
+                   <li>예시2</li>
+                 </ol>
+                 <ol style="padding: 0; width:100%" type="I">
+                   <li>순서가 있는 리스트 태그, &lt;ol type="I"&gt; &lt;/ol&gt;</li>
+                   <li>예시</li>
+                   <li>예시2</li>
+                 </ol>
+                </ul>
+               <dl>
+                 <dt>
+                   &lt;dl&gt; : 정의 리스트 태그
+                 </dt>
+                 <dd>
+                   정의하고, 설명할 수 있은 태그
+                 </dd>
+
+               </dl>
+          </ul>
+
+        <!-- 특수문자 표 -->
+        <h3>특수문자 코드</h3>
+          <table>
+            <tr id="tr1">  
+              <th>특수문자</th>
+              <th>코드</th>
+            </tr>
+            <tr> 
+              <td> & </td>
+              <td> &ampamp; </td>
+            </tr>
+            <tr>
+              <td> 공백 </td>
+              <td> &amp;nbsp;</td>
+            </tr>
+            <tr>
+              <td> &lt; </td>
+              <td> &amp;lt;</td>
+            </tr>
+            <tr>
+              <td> &gt;</td>
+              <td>&amp;gt;</td>
+            </tr>
+            <tr>
+              <td>&quot;</td>
+              <td>&amp;qout;</td>
+            </tr>
+            <tr>
+              <td>&#124;</td>
+              <td>&amp;#124;</td>
+            </tr>
+            <tr>
+              <td>&#40;</td>
+              <td>&amp;#40;</td>
+            </tr>
+            <tr>
+              <td>&#41;</td>
+              <td>&amp;#41</td>
+            </tr>
+            <tr>
+              <td>&#44;</td>
+              <td>&amp;#44</td>
+            </tr>
+            <tr>
+              <td>&#45;</td>
+              <td>&amp;#45</td>
+            </tr>
+            <tr>
+              <td>&#96;</td>
+              <td>&amp;#96;</td>
+            </tr>
+          
+          
+          </table>
+          
+        <!-- 테이블 관련내용 -->
+        <h3>테이블 만들기</h3>
+         <table>
+           <caption>
+             테이블 예시
+           </caption>
+            <tr>
+              <td colspan=3>가로줄 합치기</td>
+               <!--원래 3칸이면 <td> 1-2번째칸 </td> <td> 1-3번째칸 </td> 이렇게 2개 더 
+                있어야 하지만, colspan 3개 해서 같은 2줄에 2칸 더 안만들어도 됨.-->
+            </tr>
+        
+            <tr>
+              <td width=50% rowspan='2'>세로줄 <br> 합치기</td>
+              <!-- td width=50%로 첫번째 셀크기가 반으로 고정됨. -->
+              <td>2-2</td>
+              <td>2-3</td>
+            </tr>
+        
+            <tr>
+             <!-- 원래 <td> 1번째칸 </td> 이렇게 하나 더 있어야 하지만, 
+              윗줄에서 세로줄을 합쳐서 필요 없음. 만약 넣게 되면 1줄에 4칸 생김 -->
+              <td>3-2</td>
+              <td>3-3</td>
+            </tr>
+            <tr>
+              <td>4-1</td>
+              <td colspan=2 rowspan=2>가로/세로 <br> 합치기</td>
+              <!-- <td>4-3</td> -->
+            </tr>
+            <tr>
+              <td>5-1</td>
+              <!-- <td>5-2</td>
+              <td>5-3</td> -->
+            </tr>
+         </table>
+
+          <ul style="padding-left: 30px;" >
+            <li>&lt;th&gt; / &lt;th&gt; : table head의 약자로, 표의제목을 만듬
+              (기본값은 굵은 글씨체, 중앙정렬) 
+            </li>
+            <li>
+             &lt;tr&gt; / &lt;tr&gt; : table row 의 약자로, 가로줄을 만든느 역할
+              (기본값은 보통 글씨체에, 왼쪽정렬) 
+            </li>
+            <li>
+              &lt;td&gt; / &lt;td&gt; : table data 의 약자로, 셀을 만든느 역할
+              (기본값은 보통 글씨체에, 왼쪽정렬)
+            </li>
+            <li>
+              속성 colspan=2 : 원하는 만큼의 가로줄을 만들고 병합함. <br>
+              가로줄을 만들고 합치기 때문에 추가적으로 칸을 만들필요 없음.
+            </li>
+            <li>
+              속성 rowspan=2 : 원하는 만큼의 세로줄을 만들고 병합함. <br>
+              세로줄을 만들고 합치기 때문에 추가적으로 칸을 만들필요 없음.
+            </li>
+            <li>
+             속성 colspan:2 rowspan=2 : 2가지 속성을 같이 사용해서, 가로/세로 칸을 합침.
+            </li>
+            <li>
+              &lt;caption&gt; ~ &lt;/caption&gt; : 테이블 캡션을 달아주는 태크
+            </li>
+          </ul>
 
 
-<p style="margin-top: 50px;">
-<h2>기초 합습내용.</h2>
-<ol>
-<li><a href="1.html">HTML</a> - <a href="https://opentutorials.org/course/3084" target="_blank" title="생활코딩 html편">
-  생활코딩</a> 참고 </li>
-<li><a href="2.html">CSS</a></li>
-<li><a href="3.html">JavaSctipt</a></li>
-</ol>
+        <h3>멀티미디어 태그</h3>
+            <ul>
+              <li>
+                이미지 태그: &lt;img src="이미지 파일명 혹은 주소">
+              </li>
+                <ul>
+                  <li>
+                    속성 : &lt;img src="이미지 파일명 혹은 주소" alt="사진 안뜰 때 대체할 사진" width="폭" height="높이" title="제목" border=테두리선굵기>
+                  </li>
+                </ul>
+              <li>
+                오디오 태그 : &lt;audio src="오디오파일명 혹은 주소">
+              </li>
+                <ul>
+                  <li>
+                    속성 :  &lt;audio src="오디오파일명 혹은 주소" controls(재생제어기) autoplay(자동재생) loop(반복재생) muted(재생눌러야 재생) preload(미리다운받아서 재생)>
+                  </li>
+                </ul>
+              <li>
+                비디오 태그 : &lt;video src="비디오파일명 혹은 주소">
+              </li>  
+                <ul>
+                  <li>
+                    속성:  &lt;video src="비디오파일명 혹은 주소" controls width="~" height="~'">
+                  </li>
+                </ul>
+            </ul>
+
+        <h3>공간분할 태그</h3>
+             <div style="border:1px solid black"> div 블록분할 </div>
+             <span style="background-color: aqua;"> span 인라인 분할 </span><br>
+             <iframe src="box.html" name="iframe_a" height="150px" width="400px" 
+                    title="Iframe Example"></iframe>
+            <ul>
+              <li>
+                &lt;div&gt; ~ &lt;/div&gt; : 블록 분할 태그-해당 블록 전체를 사용
+              </li>
+                  <ul>
+                    <li>
+                      속성 : &lt;div style="border:1px solid black"&gt; 담을 내용 &lt;/div&gt;
+                    </li>
+                  </ul>
+              <li>
+                &lt;span&gt; ~ &lt;/span&gt; : 인라인 분할 태그-해당 내용의 영역만 사용
+              </li>
+                  <ul>
+                    <li>
+                      속성 : &lt;span style="background-color: aqua;"&gt; 담을 내용 &lt;/span&gt;
+                    </li>
+                  </ul>
+              <li>
+                &lt;iframe&gt; ~ &lt;/iframe&gt; : 아이프레임 태그-해당 페이지 내에 다른 페이지를 표시할 때 사용
+              </li>
+                  <ul>
+                    <li>
+                      예) iframe.html 이라는 문서를 만들고 불러넣고 싶을 때, &lt;iframe&gt; src="iframe.html" 
+                      name="iframe_a" height"500px" width="400px" title="Iframe Example" &lt;/iframe&gt;
+                    </li>
+                    <li>name 해당페이지 내의 iframe의 이름 부여, width/height 크기 지정, title 제목</li>
+                      예2) <a href="index.html" target="iframe_a"> 예시 사이트 </a> : 
+                      위에서 iframe_a로 지정한 범위에 네이버 창이 띄워짐.
+                  </ul>
+            </ul>
+
+
+
+        <h3>입력 양식 태그</h3>
+          <P>
+            <form name="frame" action="sign.jsp" method="post">
+               <!--입력양식 예시-->
+               <label for="name">이름(label)</label> <!--for="name"의 name은 아래 input id의 name을 가리킴-->
+               <input type="text" id="name" value="text입력 폼" size="20">
+            </form>
+
+               <select if="food" name="food">
+                 <option value="pizza" >피자</option>
+                 <option value="hamburger" selected >햄버거</option>
+                 <option value="pasta" >파스타</option>
+
+               </select>
+               <select if="food" name="food" multiple>
+                <option value="pizza" >피자(다중선택)</option>
+                <option value="hamburger" selected >햄버거</option>
+                <option value="pasta" >파스타</option>
+                <option value="ctrl" >+shift/ctrl</option>
+              </select>
+
+              <select if="food" name="food" multiple>
+                <optgroup label="음식(optgroup)">
+                <option value="pizza" >피자(다중선택)</option>
+                <option value="hamburger" selected >햄버거</option>
+                <option value="pasta" >파스타</option>
+                </optgroup>
+                <optgroup label="후시">
+                  <option value="cola" >콜라(다중선택)</option>
+                  <option value="coffee" selected >커피</option>
+                  <option value="icecream" >아이스크림</option>
+                  </optgroup>
+              </select>
+
+              <textarea name="article" cols="8" rows="8">
+                텍스트
+              </textarea>
+
+              <button>
+                전송버튼
+              </button>
+
+              <fieldset>
+                <legend>개인정보(fieldset)</legend>
+                <label for="name">이름 :</label><br>
+                <input type="text" id="name" value="K"><br>
+                <label for="affiliation">소속 :</label><br>
+                <input type="text" id="affiliation" name="affiliation" value="team1"><br>
+                <input type="submit" value="전송">
+              </fieldset>
+
+              <input list="browsers">
+              <datalist id="browsers">
+                <option value="Chrome"></option>
+                <option value="Firefox"></option>
+                <option value="Internet Explorer"></option>
+                <option value="Opera"></option>
+                <option value="Safari"></option>
+              </datalist>
+                <br><br>
+
+
+                <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                  <input type="number" id="a" value="50"></input>
+                  +<input type="number" id="b" value="25"></input>
+                  =<output name="x" for="a b"></output>
+                </form>
+                        
+
+            <ul>
+              <li>
+                회원가입 등에서 입력 양식 만들 때 사용.
+              </li>
+              <li>
+                name: 이름 지정, action: 폼을 처리할 웹 프로그램 지정(jst, php, asp 등), 
+                method: 전송방식(get/post) 
+              </li>
+                <ul>
+                  <li>get : url 뒷부분에 파라미터를 추가해서 전송. 어떤 데이터가 전송하는지 노출되어
+                    보안에 취약함. 노출이 상관없는 데이터 전송시 사용.  2048자의 글자 제한 존재
+                  </li>
+                  <li>
+                    post : http request 헤더에 파라미터를 추가하여 데이터를 전송함. 
+                    어떤 데이터를 전송하는지 보이지 않아 보안성이 높음. 로그인 등에 사용.
+                    글자수 제한 없음
+                  </li>
+                </ul>
+            </ul>
+              <table>
+                <tr>
+                  <td>
+                    태그
+                  </td>
+                  <td>
+                    설명
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &lt;input&gt;
+                  </td>
+                  <td>
+                    입력 제어(입력할 때 사용)
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &lt;textarea&gt;
+                  </td>
+                  <td>
+                    여러줄의 입력
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &lt;label&gt;
+                  </td>
+                  <td>
+                    &lt;input&gt; 요소의 라벨(어떤 input인지 라벨표시)
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &lt;fieldset&gt;
+                  </td>
+                  <td>
+                    폼에 관련 요소
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &lt;legend&gt;
+                  </td>
+                  <td>
+                    &lt;fieldset&gt; 요소의 캡션
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &lt;select&gt;
+                  </td>
+                  <td>
+                    드롭다운 리스트 만들 때 사용
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &lt;optgroup&gt;
+                  </td>
+                  <td>
+                    드롭다운 목록에서 관련 옵션 그룹화할 때
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &lt;option&gt;
+                  </td>
+                  <td>
+                    드롭다운 목록에서 옵션넣을 때
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &lt;button&gt;
+                  </td>
+                  <td>
+                    버튼
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &lt;datalist&gt;
+                  </td>
+                  <td>
+                    입력 제어에 대해 미리 정의된 옵션 리스트
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &lt;optput&gt;
+                  </td>
+                  <td>
+                    계산결과 출력
+                  </td>
+                </tr>
+              </table>
+          
+          </P>
+
+        
+        <h3>입력 형식</h3>
+          <ul>
+            <li>
+              &lt;input&gt; 태그를 &lt;form&gt; ~ &lt;/form&gt; 내부에서 사용할 때,
+              type 속성에 데이터 입력 양식을 지정 가능.
+            </li>
+            <table>
+              <tr>
+                <td>
+                  readonly
+                </td>
+                <td>
+                  읽기 전용
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  disabled
+                </td>
+                <td>
+                  비활성화
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  autocomplete
+                </td>
+                <td>
+                  자동 완성
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  autofocus
+                </td>
+                <td>
+                  웹 페이지 로드 시 초기에 포커스되게 설정
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  placeholder="~"
+                </td>
+                <td>
+                  입력 폼에 희미하게 설명을 보여줌
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  required
+                </td>
+                <td>
+                  필수 속성
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  spellcheck
+                </td>
+                <td>
+                  오타 점검
+                </td>
+              </tr>
+            </table>
+            
+            <br>
+            <li>
+              여러가지 form 형식
+            </li>
+            <form>
+              <input type="text" name="text" size="20" placeholder="이름">
+              <input type="password" name="password" required>
+              <input type="button" value="Button">
+              <input type="radio" name="gender" value="male">남자
+              <input type="radio" name="gender" value="female">여자<br>
+              <input type="checkbox" name="food" value="pizza">피자(다중선택가능)<br>
+              <input type="checkbox" name="food" value="hamburger">햄버거<br>
+              <input type="checkbox" name="food" value="pasta">파스타<br>
+              <input type="date" name="date" min="2020-01-01" max="2020-12-31">
+              <input type="month" id="month" name="month">
+              <input type="week" id="week" name="week">
+              <input type="time" id="time" name="time">
+              <input type="datetime-local" id="datetime" name="datetime"> <br>
+              <input type="color" name="color"><br>
+              <input type="number" name="number" min="0" max="1000">
+              <input type="range" name="point" min="0" max="100">
+              <input type="email" name="email" placeholder="email">
+              <input type="url" name="myurl" placeholder="url형식 자동 체크">
+              <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+              <input type="file" id="myfile" name="myfile">
+              <input type="submit" value="전송">
+              <input type="reset" value="초기화">
+            </form>
+
+            <xmp>
+              <form>
+                <input type="text" name="text" size="20" placeholder="이름">
+                <input type="password" name="password" required>
+                <input type="button" value="Button">
+                <input type="radio" name="gender" value="male">남자
+                <input type="radio" name="gender" value="female">여자<br>
+                <input type="checkbox" name="food" value="pizza">피자(다중선택가능)<br>
+                <input type="checkbox" name="food" value="hamburger">햄버거<br>
+                <input type="checkbox" name="food" value="pasta">파스타<br>
+                <input type="date" name="date" min="2020-01-01" max="2020-12-31">
+                <input type="month" id="month" name="month">
+                <input type="week" id="week" name="week">
+                <input type="time" id="time" name="time">
+                <input type="datetime-local" id="datetime" name="datetime"> <br>
+                <input type="color" name="color"><br>
+                <input type="number" name="number" min="0" max="1000">
+                <input type="range" name="point" min="0" max="100">
+                <input type="email" name="email" placeholder="email">
+                <input type="url" name="myurl" placeholder="url형식 자동 체크">
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+                <input type="file" id="myfile" name="myfile">
+                <input type="submit" value="전송">
+                <input type="reset" value="초기화">
+              </form>
+
+            </xmp>
+          </ul>
+
+         
+        <h3>class와 id</h3>
+          <ul>
+            <li>
+              class
+            </li>
+            <li>
+              여러 태그를 하나의 그룹으로 그룹핑
+            </li>
+            <li>
+              태그에 class="클래스명" 으로 지정
+            </li>
+            <li>
+              .클래스명 으로 선택
+            </li>
+            <li>
+              id
+            </li>
+            <li>
+              하나의 태그에 고유 id를 부여하는
+            </li>
+            <li>
+              태그에 id="고유 id" 로 지정
+            </li>
+            <li>
+              #id값 으로 선택
+            </li>
+          </ul>
+
+
+        <h3>시맨틱 관련 태그(html5에서 추가됨)</h3>  
+          <table>
+            <tr>
+              <td>
+                &lt;article&gt;
+              </td>
+              <td>
+                독립적인 자체 컨텐츠 정의
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;aside&gt;
+              </td>
+              <td>
+                페이지 내용과 별도 내용 정의(측면 사이드에 다른내용, 메뉴, 광고 등)
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;details&gt;
+              </td>
+              <td>
+                사용자가 보거나 숨길 수 있는 추가 세부사항 정의
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;figcaption&gt;
+              </td>
+              <td>
+                &lt;figure&gt; 요소에 대한 캡션
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;figure&gt;
+              </td>
+              <td>
+                일러스트, 다이어그램, 사진, 코드 목록 등의 자체 컨텐츠 지정
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;footer&gt;
+              </td>
+              <td>
+                문서 또는 섹션의 바닥글 정의(주소, copyright 등)
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;header&gt;
+              </td>
+              <td>
+                문서 또는 섹션의 머리글 정의
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;main&gt;
+              </td>
+              <td>
+                문서의 주요 컨텐츠 지정
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;main&gt;
+              </td>
+              <td>
+                문서의 주요 컨텐츠 지정
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;mark&gt;
+              </td>
+              <td>
+                강조 표시된 텍스트 정의
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;nav&gt;
+              </td>
+              <td>
+                내비게이션 링크 정의
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;section&gt;
+              </td>
+              <td>
+                문서의 섹션 정의
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;summary&gt;
+              </td>
+              <td>
+                &lt;details&gt; 요소에 대한 주제 정의
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &lt;time&gt;
+              </td>
+              <td>
+                날짜/시간 정의
+              </td>
+            </tr>
+          </table>
+
+          <h3>시맨틱 구분에 따른 웹페이지 기본형식</h3>
+          <table>
+            <tr>
+              <td colspan=2>&lt;header&gt;</td>
+            </tr>
+            <tr>
+              <td colspan=2>&lt;nav&gt;</td>
+            </tr>
+            <tr>
+              <td>&lt;section&gt;</td>
+              <td rowspan=2>
+                &lt;aside&gt;
+              </td>
+            </tr>
+            <tr>
+              <td>&lt;article&gt;</td>
+            </tr>
+            <tr>
+              <td colspan=2>&lt;footer&gt;</td>
+            </tr>
+          </table>
+            <br>
+
+            <hr>
+        <p style="margin-top:40px">
+          태그 요약 <br>
+          html html <br>
+          헤드 head <br>
+          웹페이지 주소창 위 제목 title <br>
+          메타 meta <br>
+          본문 body <br>
+          줄바꿈 br (닫힘태그 필요X) <br>
+          단락 p <br>
+          제목 h1~h6 (숫자 커질수록 작은제목) <br>
+          사진 inmg (닫힘태그 필요x) <br>
+          목록 li <br>
+          목록 구분 ul <br>
+          링크 a href="링크주소"(속성: 새탭열기target, 설명title 등) <br>
+          체크박스 input type="checkbox" <input type="checkbox"> <br>
+          주석달기 &lt;!--내용--&gt; <br>
+          입력텍스트 그대로 출력 : &lt;pre&gt; 내용 &lt;/pre&gt;(단, 디자인이 안됨) <br>
+          수평선: &lt;hr&gt; (종료태그 없이 단일 태그)
+         
+            <hr>
+        </p>
+     </div>
+    </div>
+
+<p>
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://web1-rpu9kltjq6.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </p>
 
 
-<p>html 150개 이상 태그가 존재, www.advancedwebranking.com 에서
-가장 많이 사용되는 태그 확인가능.
-<br>보통의 웹페이지는 32개의 태그를 주소 사용.
-1위 html부터 32번째 i까지(h가 1~6까지 6개라서).
+<p>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6141d80825797d7a89ff1665/1ffkj7opt';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </P>
 
-<p style="margin-top:40px">
-태그 요약 <br>
-html html <br>
-헤드 head <br>
-웹페이지 주소창 위 제목 title <br>
-메타 meta <br>
-본문 body <br>
-줄바꿈 br (닫힘태그 필요X) <br>
-단락 p <br>
-제목 h1~h6 (숫자 커질수록 작은제목) <br>
-사진 inmg (닫힘태그 필요x) <br>
-목록 li <br>
-목록 구분 ul <br>
-링크 a (속성: 새탭열기target, 설명title 등) <br>
-</p>
 
 </body>
 

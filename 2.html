@@ -4,27 +4,1446 @@
 <head>
 <title> Developer Plan </title>
 <meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+
+<style>
+  a.반응선택자예:link{color: blue}
+  a.반응선택자예:visited{color:green;}
+  a.반응선택자예:hover{color:pink;}
+  a.반응선택자예:active{color:black;}
+    
+  .구조선택자예2:nth-child(2n){background-color:skyblue;}
+  .구조선택자예2:nth-child(2n+1){background-color:lightblue;}
+  .구조선택자예22:hover{background-color:royalblue;}
+    
+  input:enabled{ background-color:skyblue;}
+  input:disabled{background-color:darkgray;}
+  input:focus{background-color:yellow;}
+
+  .기타선택자예::first-letter{font-size:30px;}
+  .기타선택자예::first-line{color:royalblue;}
+  .기타선택자예::selection{background:yellow; color:red;}
+
+  div h1 {color: red;} /* div 안에 있는 h1만 색깔 빨간색으로*/
+  h1 + h2 {color:green;} /* h1 다음에 나오는 h2*/
+  h2 ~ h4 {background-color:yellow;} /* A태그의 형제 태그 중 
+                                        A 뒤에 나오는 모든 B 태그 */
+  h5, h6{font-size:200%}
+
+  #divbox,#box0,#box1,#box2,#box3,#box4{
+    background-color:orange;
+    width:200px;
+    height: 200px;
+  }
+  .boxex{
+    font-size:large;
+    font-weight: bold;
+    border: 1px solid black;
+  }
+  div#box0{
+    display:block;
+    margin:40px;
+  }
+  div#box1{
+    margin:40px;
+    border:5px solid black;
+  }
+  div#box2{
+    margin:40px;
+    border:5px solid black;
+    padding:100px;
+  }
+  div#box3{
+    margin:400px 100px 400px 100px;
+    border: 5px solid black;
+    padding:100px;
+  }
+  div#box4{
+    margin:40px;
+    border: 5px solid black;
+    padding: 400px 100px 400px 100px;
+  }
+
+  .bnone{
+    width:200px;
+    height:50px;
+    margin:10px;
+  }
+  .solid{
+    border-style:solid;
+    margin:10px;
+  }
+  .dotted{
+    border-style:dotted;
+    margin:10px;
+  }
+  .dashed{
+    border-style:dashed;
+    margin:10px;
+  }
+  .double{
+    border-style:double;
+    margin:10px;
+  }
+  .ridge{
+    border-style:ridge;
+    margin:10px;
+  }
+  .groove{
+    border-style:groove;
+    margin:10px;
+  }
+  .inset{
+    border-style:inset;
+    margin:10px;
+  }
+  .outset{
+    border-style:outset;
+    margin:10px;
+  }
+  .mixed{
+    border-style:solid dotted dashed double;
+    margin:10px;
+  }
+  .width-5{
+    border-style:dashed;
+    border-width:5px;
+    margin:10px;
+  }
+  .mixed-width{
+    border-style:solid;
+    border-width: 5px 3px 1px 10px;
+    margin:10px;
+  }
+  .colored{
+    border-style:solid;
+    border-color:red;
+    margin:10px;
+  }
+  .rounded{
+    border-style:solid;
+    border-radius:10px 5px 0 20px;
+    margin:10px;
+  }
+
+  .배경st배경{
+    background-color:lightyellow;
+    background-image: url("http://suanlab.com/assets/images/pattern.png");
+    /* background-size:100%; */  /*100%하면 하나의 이미지가 확대됨, 아니면 자동 패턴으로 채워짐*/
+     background-repeat:no-repeat; /* 이미지 파일 한번만 뜨게(설정안하면 기본은 반복으로) */
+    /* background-repeat:repeat-x; */  /* x축으로만 반복 */
+    /* background-repeat:repeat-y; */  /* y축으로만 반복 */
+    /* background-attachment:scroll; */ /* 스트롤바 내리면 이미지가 원래 위치에 고정되어 안보임 */
+    /* background-attachment: fixed; */ /* 이미지 위치가 고정되어 스트롤바 이동해도 그자리에 있음 */
+    /* background-position: top; */ /* 이미지가 가운데 위쪽에 고정 */
+    /* background-position: bottom; */ /* 이미지가 가운데 아래에 고정 */
+  
+  }
+  .배경st{
+    font-size: xx-large;
+    font-weight: bold;
+    color: gray;
+  }
+
+  .latge{
+    font-size: large;
+  }
+  .small{
+    font-size: small;
+  }
+  .size30{
+    font-size: 30px;
+  }
+  .center{
+    text-align: center;
+  }
+  .right{
+    text-align: right;
+  }
+  .roman{
+    font-family: "Times New Roman", sans-serif; /* 앞에 폰트가 없을 때, 뒤에 꺼 사용 */
+  }
+  .bold{
+    font-weight: bold;
+  }
+  .italic{
+    font-style: italic;
+  }
+
+
+  .링크st{
+    text-align:center;
+  }
+  .링크a{
+    font-size: xx-large;
+    margin:10ppx
+  }
+  .링크a#link_1{
+    color:darkslateblue;
+  }
+  .링크a#link_1:visited{
+    color:orange;
+  }
+  .링크a#link_1:hover{
+    color:cornflowerblue;
+  }
+  .링크a#link_2{
+    color:darkgreen;
+    text-decoration:none;
+  }
+  .링크a#link_2:hover{
+    text-decoration:underline;
+    color:limegreen;
+  }
+  .링크a#link_2:active{
+    background-color:black;
+  }
+  .링크a#link_3:hover, .링크a#link_3:active{
+    background-color:gray;
+  }
+  .링크a#link_4:link, .링크a#link_4:visited{
+    border:3px solid forestgreen;
+    color:black;
+    background-color:white;
+    padding:10px;
+    text-decoration:none;
+  }
+  .링크a#link_4:hover, .링크a#link_4:active{
+    background-color: forestgreen;
+    color:white;
+  }
+  #링크bt{
+    background-color:black;
+    color:white;
+    padding:5px;
+  }
+  #링크bt:hover{
+    color:red;
+  }
+
+
+  .테이블st{
+    border-collapse:collapse;
+    border:none;
+    width:100%;
+    height:auto;
+    text-align:left;
+  }
+  .테이블stcap{
+    margin:10px;
+    background-color:greenyellow;
+  }
+  .테이블st, .테이블st th, .테이블st td{
+    border:none;
+    border-bottom:1px solid green;
+  }
+  .테이블st th, .테이블st td{
+    padding:10px 20px;
+  }
+  .테이블st tr:hover{
+    background-color:greenyellow;
+  }
+  .right{
+    text-align:right;
+  }
+
+
+  .가시{
+    width:100px;
+    height: 100px;
+    margin: 20px;
+    background-color: skyblue;
+  }  
+  .inline{
+    display:inline;
+  }
+  .block{
+    display: block;
+  }
+  .inline-block{
+    display: inline-block;
+  }
+  
+  .none{
+    display:none;
+  }
+  .visible{
+    visibility: visible;
+  }
+  .hidden{
+    visibility:hidden;
+  }
+  .half-transparent{
+    opacity:0.5;
+  }
+  .opacity{
+    opacity:0
+  }
+  .opacity:hover{
+    opacity:1;
+  }
+
+
+
+  .위치{
+    width: 150px;
+    height:150px;
+    font-size: xx-large;
+    font-weight: bold;
+    background-color: lightblue;
+    border: 1px solid black;
+  }
+  div.static{
+    position:static;
+  }
+  div.relative{
+    position:relative;
+    top:20px;
+    left:20px;
+  }
+  div.fixed{
+    position:fixed;
+    bottom:0;
+    left:0;
+    font-size:15px;
+    opacity:0.3
+  }
+  div.absolute{
+    position:absolute;
+    right:0;
+    top:15200px;
+    font-size: 15px;
+    opacity:0.3
+  }
+  .위치p{
+    font-size:xx-large;
+    font-weight:bold;
+    color:gray
+  }
+  p.sticky{
+    background-color: lightblue;
+    position: sticky;
+    top:0;
+  }
+
+
+  .위치2{
+    position: absolute;
+    width:150px;
+    height:150px;
+    font-size:large;
+    font-weight:bold;
+    background-color:lightblue;
+    border: 2px solid darkblue;
+  }
+  #box11{
+    top:16450px;
+    left:0;
+    z-index:-1;
+    opacity:0.15
+  }
+  #box12{
+    top:16480px;
+    left:30px;
+    z-index:0;
+    opacity: 0.125
+  }
+  #box13{
+    top:16510px;
+    left:60px;
+    z-index:1;
+    opacity:0.1
+  }
+  #box14{
+    top:16450px;
+    left:300px;
+    z-index:1;
+    opacity:0.15
+  }
+  #box15{
+    top:16480px;
+    left:330px;
+    z-index:0;
+    opacity:0.125
+  }
+  #box16{
+    top:16510px;
+    left:360px;
+    z-index:-1;
+    opacity:0.1
+  }
+
+
+  div.ovflow{
+    width:300px;
+    height:200px;
+    margin:30px;
+  }
+  .scroll{
+    overflow:scroll;
+  }
+  .ovflowhidden{
+    overflow:hidden;
+  }
+  .overflow-xy{
+    overflow-x:hidden;
+    overflow-y:scroll;
+  }
+
+
+  .float{
+    margin:30px;
+    width:450;
+    border:2px solid black;
+    padding:20px;
+  }
+
+  .floatimg{
+    margin:5px;
+  }
+  .float-right{
+    float:right;
+  }
+  .float-left{
+    float:left;
+  }
+
+
+  </style>
+
+<p>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VVK7LCDXP7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VVK7LCDXP7');
+</script>
+</p>
 </head>
 
 <body>
-<h1><a href="index.html">개발자 준비. 나도 개발자</a></h1>
+<h1><a href="index.html">개발자 준비.</a></h1>
 
-개발자 준비 시작 <strong><u>2021년 9월 12일</u> 오후 7:30</strong><br>
 
-<p style="margin-top: 50px;">
-<h2>기초 합습내용.</h2>
-<ol>
-<li><a href="1.html">HTML</a> - <a href="https://opentutorials.org/course/3084" target="_blank" title="생활코딩 html편">
-  생활코딩</a> 참고 </li>
-<li><a href="2.html">CSS</a></li>
-<li><a href="3.html">JavaSctipt</a></li>
-</ol>
-</p>
+
+<div id="grid">
+
+  <ol>
+    <li><a href="1.html">HTML</a></li>
+    <li><a href="2.html">CSS</a></li>
+    <li><a href="3.html">JavaSctipt</a></li>
+  </ol>
+
+  <div id="article">
+
+    개발자 준비 시작 <strong><u>2021년 9월 12일</u> 오후 7:30</strong><br>
+    <h2>기초 합습내용.</h2>
+    <ul>
+      <li><a href="https://www.youtube.com/channel/UCFfALXX0DOx7zv6VeR5U_Bg" target="blank">이수안컴퓨터연구소</a>, <a href="https://www.youtube.com/user/egoing2" target="blank">생활코딩 참고.</a></li>
+    </ul>
+    <h3>CSS 구성 요소</h3>
+      <ul>
+        <li>
+          선택자(selector): 스타일을 적용할 대상 지정
+        </li>
+        <li>
+          속성명(property): 속성의 이름
+        </li>
+        <li>
+          속성값(value): 속성에 적용할 값
+        </li>
+        <li>
+          선택자 {속성명: 속성값;} 과 같이 사용하여 스타일 적용
+        </li>
+      </ul>
+
+    <h3>CSS 적용 방법</h3>
+      <ul>
+        <li>
+          인라인 스타일: html 요소의 여는 태그에 style 속성으로 지정
+        </li>
+        <li>
+          내부 스타일: 같은 html 문서 내부에 &lt;style&gt; 태그를 사용하여 지정
+        </li>
+        <li>
+          외부 스타일: html 문서와는 개의 파일로 style로 지정
+        </li>
+      </ul>
+        <pre>
+          외부 스타일 예) style.css 파일 생성 후
+          해당 css파일을 적용하고자 하는 코딩창에서
+          <link rel="stylesheet" href="style.css"> 입력
+        </pre>
+
+      <ul>
+        <li>
+          css에서의 주석처리
+        </li>
+        <li>
+          /* 주석 내용 */
+        </li>
+      </ul>
+      
+    <h3>css선택자</h3>
+      <table>
+        <tr>
+          <td>종류</td>
+          <td>사용</td>
+          <td>설명</td>
+        </tr>
+        <tr>
+          <td>전체 선택자</td>
+          <td>*{스타일내용;}</td>
+          <td>모든 태그 선택</td>
+        </tr>
+        <tr>
+          <td>태그 선택자</td>
+          <td>태그{내용;}</td>
+          <td>지정한 태그 선택</td>
+        </tr>
+        <tr>
+          <td>id 선택자</td>
+          <td>#id이름{내용;}</td>
+          <td>특정 id 태그 선택(동일한id 복수지정X)</td>
+        </tr>
+        <tr>
+          <td>class 선택자</td>
+          <td>.클래스이름{내용;}</td>
+          <td>특정 class 태그 선택(다중 선택 가능)</td>
+        </tr>
+        <tr>
+          <td>속성 선택자</td>
+          <td>선택자[속성=값]</td>
+          <td>특정 속성 또는 속성값 태그 선택</td>
+        </tr>
+      </table>
+        <xmp>
+          <head>
+            <style>
+              p{
+                background-color: yellow;
+              }  
+              #id1 {
+                color: yellow;
+                background-color:black;
+              }
+              .class1{
+                color:blue;
+                background-color: yellow;
+              }
+              p.class1{     /*<- p안에 class1이 있는 것만*/
+                color:red;
+                background-color:navy;
+              }
+              h1{
+                color:green;
+              }
+              h1[text]{       /*<-h1안에 text 속성이 있는 경우*/
+                color:purple              
+              }
+              input[type="password"]{   /*input에 타입이 password인 것에 적용*/
+                background:yellow;
+              }
+            </style>
+          </head>
+          <body>
+            <p>p</p>
+            <p id="id1">id1인 p</p>
+            <p class="class1">class1인 p</p>
+            <p class="class2">class2인 p</p>
+            <h1>h1</h1>
+            <h1 text="h1_text">text 속성 h1</h1>
+            <form>
+              <input type="password">
+            </form>
+          </body>
+          
+        </xmp>
+
+      <h3>반응 선택자</h3>
+      <table>
+        <tr>
+          <td>종류</td>
+          <td>설명</td>
+        </tr>
+        <tr>
+          <td>:link</td>
+          <td>방문하지 않은 링크</td>
+        </tr>
+        <tr>
+          <td>:visited</td>
+          <td>방문했던 링크</td>
+        </tr>
+        <tr>
+          <td>:active</td>
+          <td>클릭하는 순간</td>
+        </tr>
+        <tr>
+          <td>:hover</td>
+          <td>마우스를 올려둘 때</td>
+        </tr>
+      </table>
+        <p>
+          <br>
+          <a class="반응선택자예" href="https://www.google.com">예) 구글 링크</a>
+            <xmp>
+              <a href="https://www.google.com">예) 구글 링크</a>
+              
+              <style>
+                a:link{color: blue}
+                a:visited{color:purple;}
+                a:hover{color:red;}
+                a:active{color:black;}
+              </style>
+            </xmp>
+        </p>
+
+      <h3>구조 선택자</h3>
+        <table>
+          <tr>
+            <td>종류</td>
+            <td>설명</td>
+          </tr>
+          <tr>
+            <td>E:root</td>
+            <td>최상위 태그 선택</td>
+          </tr>
+          <tr>
+            <td>E:nth-child(n)</td>
+            <td>순서와 일치하는 E 태그 선택(순서에 다른 태그 포함</td>
+          </tr>
+          <tr>
+            <td>E:nth-last-child(n)</td>
+            <td>뒤에서부터 순서가 일치하는 E 태그 선택(순서에 다른 태그 포함)</td>
+          </tr>
+          <tr>
+            <td>E:nth-of-type(n)</td>
+            <td>순서가 일치하는 E 태그 선택(순서에 E 태그만 포함</td>
+          </tr>
+          <tr>
+            <td>E:nth-last-of-type(n)</td>
+            <td>뒤에서부터 순서와 일치하는 E 태그 선택(순서에 E 태그만 포함)</td>
+          </tr>
+          <tr>
+            <td>E:first-child</td>
+            <td>맨 첫번째 태그가 E 태그인 경우 선택(순서에 다른 태그 포함)</td>
+          </tr>
+          <tr>
+            <td>E:last-of-child</td>
+            <td>맨 뒤의 태그가 E 태그인 경우 선택(순서에 다른 태그 포함)</td>
+          </tr>
+          <tr>
+            <td>E:first-of-type</td>
+            <td>E 태그 중 첫번째 선택</td>
+          </tr>
+          <tr>
+            <td>E:last-of-type</td>
+            <td>E 태그 중 마지막 선택</td>
+          </tr>
+          <tr>
+            <td>E:only-child</td>
+            <td>유일한 자식인 E 태그 선택</td>
+          </tr>
+          <tr>
+            <td>E:only-of-type</td>
+            <td>유일한 타입의 E 태그 선택</td>
+          </tr>
+          <tr>
+            <td>E:empty</td>
+            <td>텍스트와 공백을 포함하여 자식요소가 없는 E 태그 선택</td>
+          </tr>
+          
+        </table>
+          <xmp>
+          구조 선택자 예1)
+          <head>
+          <style>
+            p { background-color: lightsteelblue;}
+            p:nth-child(1) {font-size:400%}
+            p:nth-child(2) {font-size:350%}
+          </style>
+          </head>
+          <body>
+            <p>첫번째 p태그: 폰트 사이즈 400%</p>
+            <p>두번째 p태그: 폰트 사이즈 350%</p>
+          </body>
+
+          구조 선택자 예2)
+          <style>
+            th:first-child{border-radius:10px 0 0 0;}
+            th:last-child{border-radius:0 10px 0 0;}
+            tr:nth-child(2n){background-color: skyblue;}
+            tr:nth-child(2n+1){background-color:lightblue;}
+            td:hover{background-color:royalblue;}
+          </style>
+          <table>
+            <tr>
+              <th>head</th>
+              <th>head</th>
+              <th>head</th>
+            </tr>
+            <tr>
+              <td>body</td>
+              <td>body</td>
+              <td>body</td>
+            </tr>
+            <tr>
+              <td>body</td>
+              <td>body</td>
+              <td>body</td>
+            </tr>
+            <tr>
+              <td>body</td>
+              <td>body</td>
+              <td>body</td>
+            </tr>
+          </table>
+          </xmp>
+          <table style="border-collapse: separate; border:none;">
+            <tr class="구조선택자예2"> 
+              <th class="구조선택자예22" style="border-radius:10px 0 0 0">head</th>
+              <th class="구조선택자예22" >head</th>
+              <th class="구조선택자예22"  style="border-radius:0 10px 0 0;">head</th>
+            </tr>
+            <tr class="구조선택자예2">
+              <td class="구조선택자예22" >body</td>
+              <td class="구조선택자예22" >body</td>
+              <td class="구조선택자예22" >body</td>
+            </tr>
+            <tr class="구조선택자예2">
+              <td class="구조선택자예22">body</td>
+              <td class="구조선택자예22">body</td>
+              <td class="구조선택자예22">body</td>
+            </tr>
+            <tr class="구조선택자예2">
+              <td class="구조선택자예22">body</td>
+              <td class="구조선택자예22">body</td>
+              <td class="구조선택자예22">body</td>
+            </tr>
+          </table>
+
+      <h3>상태 선택자</h3>
+        <p>
+        <table>
+          <caption>form의 상태를 선택하여 사용</caption>
+          <tr>
+            <td>:enabled</td>
+            <td>사용 가능한 form 관련 태그 선택</td>
+          </tr>
+          <tr>
+            <td>:disabled</td>
+            <td>사용 불가능한 form 관련 태그</td>
+          </tr>
+          <tr>
+            <td>:checked</td>
+            <td>현재 선택된 form 관련 태그</td>
+          </tr>
+          <tr>
+            <td>:focus</td>
+            <td>현재 초점이 맞추어진 form 관련 태그 선택</td>
+          </tr>
+        </table>
+            <br>
+          <input>
+          <input disabled="disabled">
+          <input>
+            <xmp>
+              <style>
+              input:enabled{ background-color:skyblue;}
+              input:disabled{background-color:darkgray;}
+              input:focus{background-color:yellow;}
+              </style>
+              <input>
+              <input disabled="disabled">
+              <input>
+            </xmp>
+        </p>
+
+
+      <h3>기타 선택자</h3>
+      <p>
+        <table>
+          <tr>
+            <th>종류</th>
+            <th>설명</th>
+          </tr>
+          <tr>
+            <td>E:lang(ko)</td>
+            <td>lang 속성 값이 ko 인 태그 선택</td>
+          </tr>
+          <tr>
+            <td>E:not(S)</td>
+            <td>S가 아닌 E 태그 선택</td>
+          </tr>
+          <tr>
+            <td>E:target</td>
+            <td>E의 url 요청 시 선택</td>
+          </tr>
+          <tr>
+            <td>Efirst-line</td>
+            <td>E 태그의 첫번째 줄 선택</td>
+          </tr>
+          <tr>
+            <td>E:first-letter</td>
+            <td>E 태그의 첫번째 문자 선택</td>
+          </tr>
+          <tr>
+            <td>E:before</td>
+            <td>E 태그의 시작 지점 태그 선택</td>
+          </tr>
+          <tr>
+            <td>E:after</td>
+            <td>E 태그의 끝 지점 태그 선택</td>
+          </tr>
+        </table>
+        <br>
+          <div class="기타선택자예">
+            첫글자 폰트사이즈 30, 첫줄 색 로얄블루 <br>
+            선택 시 배경 노란색 <br>
+            해당 내용 빨간색<br>
+          </div>
+            <xmp>
+              <style>
+            .기타선택자예::first-letter{font-size:30px;}
+            .기타선택자예::first-line{color:royalblue;}
+            .기타선택자예::selection{background:yellow; color:red;}
+              </style>
+            </xmp>
+      </p>
+
+      <h3>선택자 조합</h3>
+        <p>
+          <table>
+            <tr>
+              <th>종류</th>
+              <th>설명</th>
+            </tr>
+            <tr>
+              <td>A B</td>
+              <td>선택자 B가 포함된 선택자 A</td>
+            </tr>
+            <tr>
+              <td>A > B</td>
+              <td>선택자 A의 직계 자손인 선택자 B 선택</td>
+            </tr>
+            <tr>
+              <td>A + B</td>
+              <td>A 선택자 바로 다음의 B 선택자 선택</td>
+            </tr>
+            <tr>
+              <td>A ~ B</td>
+              <td>A 선택자 다음에 인접해 있는 모든 선택자 B 선택</td>
+            </tr>
+            <tr>
+              <td>A, b </td>
+              <td>선택자 A와 선택자 B 선택</td>
+            </tr>
+          </table>
+          <br>
+            <div>
+              <h1 style="text-align:left; border-bottom:none;padding:0px;">heading 1</h1>
+              <h2>heading 2</h2>
+              <h3>heading 3</h3>
+              <h4>heading 4</h4>
+              <h5>heading 5</h5>
+              <h6>heading 6</h6>
+            </div>
+            <xmp>
+              div h1 {color: red;} /* div 안에 있는 h1만 색깔 빨간색으로*/
+              h1 + h2 {color:green;} /* h1 다음에 나오는 h2*/
+              h2 ~ h4 {background-color:yellow;} /* A태그의 형제 태그 중 
+                                                    A 뒤에 나오는 모든 B 태그 */
+              h5, h6{font-size:200%}
+            </xmp>
+        </p>
+      
+      <h3>css 박스 스타일</h3>
+        <p>
+          포함관계: margin>border>padding>content
+          <div id="divbox">
+            <p class="boxex">div</p>
+          </div>
+          <div id="box0">
+            <p class="boxex">div#box0</p>
+      
+          </div>
+          <div id="box1">
+            <p class="boxex">div#box1</p>
+            <p class="boxex">margin:40px</p>
+            <p class="boxex">padding:0</p>
+          </div>
+          <div id="box2">
+            <p class="boxex">div#box2</p>
+            <p class="boxex">margin:40px</p>
+            <p class="boxex">border:5px solid black</p>
+            <p class="boxex">padding: 30px</p>
+          </div>
+          <div id="box3">
+            <p class="boxex">div#box3</p>
+            <p class="boxex">margin: 400px 100px 400px 100px</p>
+            <p class="boxex">border: 5px solid black</p>
+            <p class="boxex">padding: 100px</p>
+          </div>
+          <div id="box4">
+            <p class="boxex">div#box4</p>
+            <p class="boxex">margin:40px</p>
+            <p class="boxex">border: 5px solid black</p>
+            <p class="boxex">padding: 400px 100px 400px 100px</p>
+          </div>
+        </p>
+
+      <h3>테두리 스타일</h3>
+        <div class="bnone">border:none</div>
+        <div class="solid">border-style:solid</div>
+        <div class="dotted">border-style:dotted</div>
+        <div class="dashed">border-style:dashed</div>
+        <div class="double">border-style:double</div>
+        <div class="ridge">border-style:ridge (테두리가 약간 볼록)</div>
+        <div class="groove">border-style:groove</div>
+        <div class="inset">border-style:inset (들어가있는 느낌)</div>
+        <div class="outset">border-style:outset (튀어나와 있는 느낌)</div>
+        <div class="mixed">mixed border(top부터 시계방향으로 4개 적용가능)</div>
+        <div class="width-5">border-width:5plx</div>
+        <div class="mixed-width">mixed 5px 3px 1px 10px(top부터 시계방향 적용가능)</div>
+        <div class="colored">colored (테두리색 변경)</div>
+        <div class="rounded">   rounded (좌상부터 시계방향 둥근정도 다르게 가능)</div>
+
+      <h3>배경 스타일</h3>
+       <p>
+           <div class="배경st배경">
+           <p class="배경st">background exaple</p>
+           <p class="배경st">background exaple</p>
+           <p class="배경st">background exaple</p>
+           <p class="배경st">background exaple</p>
+           <p class="배경st">background exaple</p>
+           <p class="배경st">background exaple</p>
+           <p class="배경st">background exaple</p>
+           <p class="배경st">background exaple</p>
+           <p class="배경st">background exaple</p>
+           <p class="배경st">background exaple</p>
+           </div>
+           <xmp>
+           .배경st배경{
+           background-color:lightyellow;
+           background-image: url("http://suanlab.com/assets/images/pattern.png");
+           /* background-size:100%; */  /*100%하면 하나의 이미지가 확대됨, 아니면 자동 패턴으로 채워짐*/
+            background-repeat:no-repeat; /* 이미지 파일 한번만 뜨게(설정안하면 기본은 반복으로) */
+           /* background-repeat:repeat-x; */  /* x축으로만 반복 */
+           /* background-repeat:repeat-y; */  /* y축으로만 반복 */
+           /* background-attachment:scroll; */ /* 스트롤바 내리면 이미지가 원래 위치에 고정되어 안보임 */
+           /* background-attachment: fixed; */ /* 이미지 위치가 고정되어 스트롤바 이동해도 그자리에 있음 */
+           /* background-position: top; */ /* 이미지가 가운데 위쪽에 고정 */
+           /* background-position: bottom; */ /* 이미지가 가운데 아래에 고정 */
+           }
+           </xmp>
+       </p>
+
+
+       <h3>글자 스타일</h3>
+        <p>
+          <p class="latge">font-size: large</p>
+          <p class="small">font-size: small</p>
+          <p class="size30">font-size: 30px</p>
+          <p class="roman">font-family: "Times New Roman"</p>
+          <p class="center bold">center bold</p>
+          <p class="right italic">right italic</p>
+          <xmp>
+            .latge{
+              font-size: large;
+            }
+            .small{
+              font-size: small;
+            }
+            .size30{
+              font-size: 30px;
+            }
+            .center{
+              text-align: center;
+            }
+            .right{
+              text-align: right;
+            }
+            .roman{
+              font-family: "Times New Roman", sans-serif; /* 앞에 폰트가 없을 때, 뒤에 꺼 사용 */
+            }
+            .bold{
+              font-weight: bold;
+            }
+            .italic{
+              font-style: italic;
+            }
+          </xmp>
+        </p>
+      
+
+       <h3>링크 스타일</h3>
+        <div class="링크st">
+          <a class="링크a" id="link_1" href="http://www.google.com">First Link</a> <br><br>
+          <a class="링크a"  id="link_2" href="http://www.google.com">2nd Link</a> <br><br>
+          <a class="링크a"  id="link_3" href="http://www.google.com">3rd Link</a> <br><br>
+          <a class="링크a"  id="link_4" href="http://www.google.com">4th Link</a> <br><br>
+          <button id="링크bt" onclick="location.href='http://www.google.com'">button link</button>
+          
+          <xmp>
+            .링크st{
+              text-align:center;
+            }
+            .링크a{
+              font-size: xx-large;
+              margin:10ppx
+            }
+            .링크a#link_1{
+              color:darkslateblue;
+            }
+            .링크a#link_1:visited{
+              color:orange;
+            }
+            .링크a#link_1:hover{
+              color:cornflowerblue;
+            }
+            .링크a#link_2{
+              color:darkgreen;
+              text-decoration:none;
+            }
+            .링크a#link_2:hover{
+              text-decoration:underline;
+              color:limegreen;
+            }
+            .링크a#link_2:active{
+              background-color:black;
+            }
+            .링크a#link_3:hover, .링크a#link_3:active{
+              background-color:gray;
+            }
+            .링크a#link_4:link, .링크a#link_4:visited{
+              border:3px solid forestgreen;
+              color:black;
+              background-color:white;
+              padding:10px;
+              text-decoration:none;
+            }
+            .링크a#link_4:hover, .링크a#link_4:active{
+              background-color: forestgreen;
+              color:white;
+            }
+            #링크bt{
+              background-color:black;
+              color:white;
+              padding:5px;
+            }
+            #링크bt:hover{
+              color:red;
+            }          
+          </xmp>
+          
+        </div>
+
+       <h3>테이블 스타일</h3>
+        <p>
+          <table class="테이블st">
+            <caption class="테이블stcap">영양 성분 표시</caption>
+            <tr>
+              <th>메뉴</th>
+              <th>열량(kcal)</th>
+              <th>단백질(g)</th>
+              <th>나트륨(mg)</th>
+              <th>당류(g)</th>
+              <th>포화지방(g))</th>
+            </tr>
+            <tr>
+              <td>치킨버거</td>
+              <td>527</td>
+              <td>20(36)</td>
+              <td>1123(56)</td>
+              <td>10</td>
+              <td>5(33)</td>
+            </tr>
+            <tr>
+              <td>불고기버거</td>
+              <td>390</td>
+              <td>17(31)</td>
+              <td>713(36)</td>
+              <td>8</td>
+              <td>7.4(49)</td>
+            </tr>
+            <tr>
+              <td>치즈버거</td>
+              <td>559</td>
+              <td>22(41)</td>
+              <td>681(38)</td>
+              <td>7</td>
+              <td>14.6(97)</td>
+            </tr>
+            <tr>
+              <td>새우버거</td>
+              <td>421</td>
+              <td>14(26)</td>
+              <td>685(34)</td>
+              <td>5</td>
+              <td>4(27)</td>
+            </tr>
+            <tr>
+              <td>와규버거</td>
+              <td>457</td>
+              <td>23(43)</td>
+              <td>658(33)</td>
+              <td>8</td>
+              <td>4.4(29)</td>
+            </tr>
+          </table>
+          <p class="right">( ) 안은 1일 영양성분 기준치에 대한 비율(%)</p>
+          <xmp>
+            .테이블st{
+              border-collapse:collapse;
+              border:none;
+              width:100%;
+              height:auto;
+              text-align:left;
+            }
+            .테이블stcap{
+              margin:10px;
+              background-color:greenyellow;
+            }
+            .테이블st, .테이블st th, .테이블st td{
+              border:none;
+              border-bottom:1px solid green;
+            }
+            .테이블st th, .테이블st td{
+              padding:10px 20px;
+            }
+            .테이블st tr:hover{
+              background-color:greenyellow;
+            }
+            .right{
+              text-align:right;
+            }
+          
+          </xmp>
+        </p>
+
+
+       <h3>가시 속성</h3>
+        <p>
+          <h1>display</h1>
+          <p class="inline">p inline #1</p>
+          <p class="inline">p inline #2</p>
+          <p class="inline"> &lt;-p태그는 기본적으로 줄 바꿔주나, inline속성이 들어가서 한줄에 표시됨.</p>
+          <span class="block">span block #1  &lt;- span은 기본 inline 형태이나, block으로 바꿔서 줄바뀜.</span>
+          <span class="block">span block#2</span>
+          <div class="가시 inline-block">box1</div>
+          <div class="가시 none">box2</div>
+          <div class="가시 inline-block">box3</div>
+          <span> &lt;-box1과 box3 사이에 box2의 속성이 display:none 이기 때문에 사라짐.</span>
+          <hr><h1>visibility</h1>
+          <div class="가시 visible">visible<br>아래 히든속성으로 하나 감춰져 있음</div>
+          <div class="가시 hidden">hidden</div>
+          <div class="가시 visible">visible</div>
+          <hr>
+          <h1>opacity</h1>
+          <div class="가시 half-transparent">opacity:0.5 (반투명상태)<br>아래에 투명박스존재</div>
+          <div class="가시 opacity">opacity:0<br>불투명=0=완전투명상태 </div>
+          <xmp>
+            .가시{
+              width:100px;
+              height: 100px;
+              margin: 20px;
+              background-color: skyblue;
+            }  
+            .inline{
+              display:inline;
+            }
+            .block{
+              display: block;
+            }
+            .inline-block{
+              display: inline-block;
+            }
+            
+            .none{
+              display:none;
+            }
+            .visible{
+              visibility: visible;
+            }
+            .hidden{
+              visibility:hidden;
+            }
+            .half-transparent{
+              opacity:0.5;
+            }
+            .opacity{
+              opacity:0
+            }
+            .opacity:hover{
+              opacity:1;
+            }
+
+            <h1>display</h1>
+            <p class="inline">p inline #1</p>
+            <p class="inline">p inline #2</p>
+            <p class="inline"> &lt;-p태그는 기본적으로 줄 바꿔주나, inline속성이 들어가서 한줄에 표시됨.</p>
+            <span class="block">span block #1  &lt;- span은 기본 inline 형태이나, block으로 바꿔서 줄바뀜.</span>
+            <span class="block">span block#2</span>
+            <div class="가시 inline-block">box1</div>
+            <div class="가시 none">box2</div>
+            <div class="가시 inline-block">box3</div>
+            <span> &lt;-box1과 box3 사이에 box2의 속성이 display:none 이기 때문에 사라짐.</span>
+            <hr><h1>visibility</h1>
+            <div class="가시 visible">visible<br>아래 히든속성으로 하나 감춰져 있음</div>
+            <div class="가시 hidden">hidden</div>
+            <div class="가시 visible">visible</div>
+            <hr>
+            <h1>opacity</h1>
+            <div class="가시 half-transparent">opacity:0.5 (반투명상태)<br>아래에 투명박스존재</div>
+            <div class="가시 opacity">opacity:0<br>불투명=0=완전투명상태 </div>
+            
+          </xmp>
+        </p>
+
+
+       <h3>위치(positon) 속성</h3>
+        <p>
+          <div class="위치 static">static</div>
+          <div class="위치 relative">relative</div>
+          <div class="위치 fixed">fixed<br>위치고정 중 fixed 속성 예시.</div>
+          <div class="위치 absolute">absolute<br>위치 고정으로 페이지 크기에 따라 위치가 바뀌어 보일 수 있음.</div>
+          <br>
+          <p class="위치p sticky">sticky: 해당위치 이후부터 스크롤바 이동 시 따라옴.</p>
+          <p class="위치p">position example</p>
+          <p class="위치p">position example</p>
+          <p class="위치p">position example</p>
+          <p class="위치p">position example</p>
+          <p class="위치p">position example</p>
+          <p class="위치p">position example</p>
+          <p class="위치p">position example</p>
+          <p class="위치p">position example</p>
+          <p class="위치p">position example</p>
+          <p class="위치p">position example</p>
+          <p class="위치p">position example</p>
+
+        </p>
+
+       <h3>위치(position) 속성2(z-index)</h3>
+        <p>z-index 속성의 숫자가 클수록 제일 앞쪽에 배치</p>
+        <div class="위치2" id="box11">box1</div>
+        <div class="위치2" id="box12">box2</div>
+        <div class="위치2" id="box13">box3</div>
+        <div class="위치2" id="box14">box4</div>
+        <div class="위치2" id="box15">box5</div>
+        <div class="위치2" id="box16">box6</div>
+        <pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </pre>
+       <h3>overflow속성</h3>
+        <p>
+          <div class="ovflow scroll">
+            <p>
+              동해물과 백두산이 마르고 닳도록하느님이 보우하사 우리나라 만세. <br>
+              무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+            </p>
+            <p>
+              남산 위에 저 소나무, 철갑을 두른 듯 바람 서리 불편함은 우리 기상일세. <br>
+              무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+            </p>
+            <p>
+              가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편 단심일세. <br>
+              무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+            </p>
+            <p>
+              이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세. <br>
+              무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+            </p>
+          </div>
+          <div class="ovflow ovflowhidden">
+            <p>
+              동해물과 백두산이 마르고 닳도록하느님이 보우하사 우리나라 만세. <br>
+              무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+            </p>
+            <p>
+              남산 위에 저 소나무, 철갑을 두른 듯 바람 서리 불편함은 우리 기상일세. <br>
+              무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+            </p>
+            <p>
+              가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편 단심일세. <br>
+              무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+            </p>
+            <p>
+              이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세. <br>
+              무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+            </p>
+          </div>
+          <div class="ovflow overflow-xy">
+            <p>
+              동해물과 백두산이 마르고 닳도록하느님이 보우하사 우리나라 만세. <br>
+              무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+            </p>
+            <p>
+              남산 위에 저 소나무, 철갑을 두른 듯 바람 서리 불편함은 우리 기상일세. <br>
+              무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+            </p>
+            <p>
+              가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편 단심일세. <br>
+              무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+            </p>
+            <p>
+              이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세. <br>
+              무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+            </p>
+          </div>
+
+          <xmp>
+            <style>
+            div.ovflow{   
+              width:300px;
+              height:200px;
+              margin:30px;
+            }
+            .scroll{   기본적인 스크롤 기능
+              overflow:scroll;
+            }
+            .ovflowhidden{  스크롤 기능을 없앰(내용잘림)
+              overflow:hidden;
+            }
+            .overflow-xy{   가로스크롤 없앰
+              overflow-x:hidden;
+              overflow-y:scroll;
+            }
+            </style>
+          </xmp>
+        </p>
+      
+      
+       <h3>float 속성</h3>
+       <p>
+        <div class="float">
+          <center><img class="floatimg"  src="https://w.namu.la/s/e50705b2c020d2dbf60dbdbc56226aefa556696c00f36ebfbba5b362ee1f81edea403fae1d375a2c3b2169c70bdb0b56e42c6916ce65c5a58ea8cff9c477c2185b90d70ac870dedafd55f9e544ba385c" width=200px;></center>
+          <p>
+            동해물과 백두산이 마르고 닳도록하느님이 보우하사 우리나라 만세. <br>
+            무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+          </p>
+          <p>
+            남산 위에 저 소나무, 철갑을 두른 듯 바람 서리 불편함은 우리 기상일세. <br>
+            무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+          </p>
+          <p>
+            가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편 단심일세. <br>
+            무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+          </p>
+          <p>
+            이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세. <br>
+            무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+          </p>
+        </div>
+        <div class="float">
+          <img class="floatimg float-left"  src="https://w.namu.la/s/e50705b2c020d2dbf60dbdbc56226aefa556696c00f36ebfbba5b362ee1f81edea403fae1d375a2c3b2169c70bdb0b56e42c6916ce65c5a58ea8cff9c477c2185b90d70ac870dedafd55f9e544ba385c" width=200px;>
+
+          <p>
+            동해물과 백두산이 마르고 닳도록하느님이 보우하사 우리나라 만세. <br>
+            무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+          </p>
+          <p>
+            남산 위에 저 소나무, 철갑을 두른 듯 바람 서리 불편함은 우리 기상일세. <br>
+            무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+          </p>
+          <p>
+            가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편 단심일세. <br>
+            무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+          </p>
+          <p>
+            이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세. <br>
+            무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+          </p>
+        </div>
+        <div class="float">
+          <img class="floatimg float-right" src="https://w.namu.la/s/e50705b2c020d2dbf60dbdbc56226aefa556696c00f36ebfbba5b362ee1f81edea403fae1d375a2c3b2169c70bdb0b56e42c6916ce65c5a58ea8cff9c477c2185b90d70ac870dedafd55f9e544ba385c" width=200px;>
+
+          <p>
+            동해물과 백두산이 마르고 닳도록하느님이 보우하사 우리나라 만세. <br>
+            무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+          </p>
+          <p>
+            남산 위에 저 소나무, 철갑을 두른 듯 바람 서리 불편함은 우리 기상일세. <br>
+            무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+          </p>
+          <p>
+            가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편 단심일세. <br>
+            무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+          </p>
+          <p>
+            이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세. <br>
+            무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세. <br>
+          </p>
+        </div>
+
+        </p>
+
+
+
+
+  </div>
+</div>
 
 <p>
- 2 번째 기초 코딩 CSS
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://web1-rpu9kltjq6.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </p>
+<p>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6141d80825797d7a89ff1665/1ffkj7opt';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</P>
 </body>
 
 </html>
